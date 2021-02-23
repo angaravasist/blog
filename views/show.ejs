@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+<div class="row flex-wrap container-fluid ml-0 justify-content-between align-items-center">
+	
+	<!-- <div class="col-md-2 text-center my-1 d-none d-md-block">
+		ad 2
+	</div> -->
+	
+	<div class="col-md-8 px-0 mx-auto">
+		<div class="container-fluid px-0">
+			 <% if(currentUser && returnData.author.id.equals(currentUser._id)){ %>
+				<div>
+					<a class="btn btn-xs btn-warning float-right" href="/posts/<%= returnData.kababCasedTitle %>/edit">Edit</a>
+					<form id="delete-form" action="/posts/<%= returnData.kababCasedTitle %>?_method=DELETE" method="POST" class="d-inline-block float-right">
+						<button class="btn btn-xs btn-danger mr-2">Delete</button>
+					</form>
+				</div>
+			<% } %>
+			<div>
+				<h1><%= returnData.title %></h1>
+				<small>Published on: <%= returnData.created.toDateString() %></small>
+				<div class="social">
+				  <a href="#" id="share-wa" class="sharer button"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+</a>
+				  <a href="#" id="share-fb" class="sharer button"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+</a>
+				  <a href="#" id="share-tw" class="sharer button"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+</a>
+				</div>
+				<hr>
+				<div class="img-fluid descriptionClass"><%- returnData.description %></div>
+				<div class="border bg-light text-break p-2 rounded">
+					<h5>Check out our other articles:</h5>
+					<% AllPostData.forEach((element)=>{ %>
+						<small> | <a href="/posts/<%=element.kababCasedTitle%>" target='blank' rel="noopener" class="font-italic"><%=element.title%></a> | </small> 
+					<% }); %>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- <div class="col-md-2 text-center my-1 d-none d-md-block">
+		ad 2
+	</div> -->
+<%- include("partials/footer") %>

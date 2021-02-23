@@ -1,0 +1,178 @@
+/* Direct Tag */
+img{
+	transition: .3s ease;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+
+/* header */
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+}
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+
+
+/* navbar */
+#navbar {
+  background: black;
+  z-index: 11;
+}
+
+#navbar a {
+  color: black;
+  display: block;
+  text-align: center;
+  padding: 10px 7px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Carousel */
+.carousel-item img{
+	height: 21rem;
+}
+.carousel-caption{
+	background-image: linear-gradient(to right, rgba(77, 77, 77, 0), rgba(77, 77, 77, 0.4), rgba(77, 77, 77, 0));
+}
+
+.card-img{
+	height: 100%;
+}
+
+.fontSize{
+	font-size: 1.25rem
+}
+
+.objectFitClass{
+	object-fit: cover;
+}
+
+.heightClass{
+	max-height: 200px;
+}
+
+.heightClassNewPosts{
+	max-height: 100px;
+}
+
+.imageFadeClass:hover img{
+	opacity: 0.7;
+}
+
+
+/* about us */
+.aboutimg{
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  padding: 0;
+  border-radius: 50%;
+}
+
+
+/* pop up */
+.cookie-container {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: #2f3640;
+  color: #f5f6fa;
+  padding: 0 32px;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+  transition: 400ms;
+}
+
+.cookie-container.active {
+  bottom: 0;
+}
+
+.cookie-container a {
+  color: #f5f6fa;
+}
+
+
+/* navbar js */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.fontStyle{
+	background-color: transparent;
+	border: none;
+	width: 30px;
+	transition: 0.3s;
+}
+.fontStyle:hover{
+	background-color: black;
+	color: white;
+	opacity: 0.6;
+}
+
+
+/* Other Classes */
+.descriptionClass img{
+	width: 100%;
+	max-height: 500px;
+	object-fit: contain;
+	
+}
+
+@media only screen and (max-width: 600px) {
+	.descriptionClass img{
+		max-height: 300px;
+	}
+}
+.gridDisplay{
+	display: grid;
+}
+
+
+/* footer */
+.footer-min-div{
+	background: #edf0f5;
+}
+.footer-social-icons ul li{
+	display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 10px 10px;
+    border-radius: 100%;
+}
+.footer-social-icons ul li a{
+	color: #272727;
+	font-size: 25px;
+}
+
+.footer-menu-one ul li{
+	display: inline-block;
+	margin: 0px 15px;
+}
+.footer-menu-one ul li a{
+	text-transform: uppercase;
+}
+i {
+	color: black;
+}
+.modal-backdrop {
+	z-index: 10;
+}

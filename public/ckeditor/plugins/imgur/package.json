@@ -1,0 +1,43 @@
+{
+  "_from": "ckeditor-imgur",
+  "_id": "ckeditor-imgur@0.0.7",
+  "_inBundle": false,
+  "_integrity": "sha512-egkthhm6jKZ6mqWLge/9NBjT5wjYKnmK4qup3OzNwL2YDQkAFw+WtGJm49dfw/e6gnLd+Te+EZ+bI9ghIj67yg==",
+  "_location": "/ckeditor-imgur",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ckeditor-imgur",
+    "name": "ckeditor-imgur",
+    "escapedName": "ckeditor-imgur",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ckeditor-imgur/-/ckeditor-imgur-0.0.7.tgz",
+  "_shasum": "778af37465741baac87fdcda4183a36c0c88265d",
+  "_spec": "ckeditor-imgur",
+  "_where": "/workspace/DevelopmentCourse/basicTemp",
+  "author": {
+    "name": "pjchender"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "This is a plugin for ckeditor to upload image through imgur",
+  "keywords": [
+    "ckeditor",
+    "imgur"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "ckeditor-imgur",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.7"
+}

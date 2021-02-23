@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+
+<div class="container">
+	<form action="/posts/<%= returnData.kababCasedTitle %>?_method=PUT" method="POST" >
+		
+		<div class="form-group row">
+			<label for="Title" class="col-sm-2 col-form-label">Title</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" name="updatedPost[title]" placeholder="Title of the post" value="<%= returnData.title %>">
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="Image" class="col-sm-2 col-form-label">Image</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" name="updatedPost[url]" placeholder="Image URL" value="<%= returnData.url %>">
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="ShortDescription" class="col-sm-2 col-form-label">Short description</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" name="updatedPost[shortDescription]" placeholder="Short description for the post upto 100 letters" value="<%= returnData.shortDescription %>">
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="Description" class="col-sm-2 col-form-label">Description</label>
+			<div class="col-md-8">	
+				<textarea class="ckeditor" name="updatedPost[description]" id="updatedPost[description]"><%= returnData.description %></textarea>
+				
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="keywords" class="col-sm-2 col-form-label">Keywords</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" name="updatedPost[keywords]" placeholder="Enter the post related keywords" id="keywords" value="<%= returnData.keywords %>" required>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Add me to featured?</label>	
+			<div class="form-check form-check-inline pl-3">
+				<input type="radio" class="form-check-input" name="updatedPost[Featured]" id="radioTrue" value=true>
+				<label for="radioTrue" class="form-check-label">Yes</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input type="radio" class="form-check-input" name="updatedPost[Featured]" id="radioFalse" value=false>
+				<label for="radioFalse" class="form-check-label">No</label>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<div class="col-sm-10 offset-sm-2">
+				<input type="submit" class="btn btn-primary" value="Update">
+			</div>
+		</div>
+	</form>
+</div>
+<script src="/ckeditor/ckeditor.js"></script>
+<script>CKEDITOR.replaceAll("Description");</script>
+<%- include("partials/footer") %>

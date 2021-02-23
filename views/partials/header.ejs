@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,shrink-to-fit=no">
+		<meta name="author" content="Jaswanth">
+		<meta name="developer" content="Vasist Angara">
+		<% if(presentPage==="show"){ %>
+			<meta name="description" content="<%=returnData.shortDescription%>">
+			<meta name="keywords" content="<%=returnData.keywords%>">
+			<title><%=returnData.title%></title>
+			<link rel="canonical" href="https://www.onlyspace.in/posts/<%=returnData.kababCasedTitle%>">
+		<% } else { %>
+			<meta name="description" content="Join us for a journey of an epic exploration, you can find all the lastest news,photos,videos and updates from ground to space everyday">
+			<title>OnlySPACE</title>
+		<% } %>
+		<link rel="icon" href="https://i.imgur.com/veBAR5V.png" type="image/png" sizes="16*16">
+		<link rel="home" href="https://www.onlyspace.in/posts">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+		<script data-ad-client="ca-pub-2015965083992628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	</head>
+    <body>
+	  <header class="blog-header py-3 px-lg-5 px-3">
+		<div class="row flex-nowrap justify-content-between align-items-center">
+		  <div class="col-2 col-md-3 pt-1">
+			<button class="btn" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></button>
+		  </div>
+		  <div class="col-8 col-md-6 text-center">
+			<a class="blog-header-logo text-dark" href="/"><i class="fa fa-space-shuttle d-none d-md-inline" aria-hidden="true"></i> OnlySPACE</a>
+		  </div>
+
+		  <div class="col-2 col-md-3 d-flex justify-content-end align-items-center">
+			<a class="ml-auto" href="https://www.facebook.com/onlyspace.in" target="blank" rel="noopener"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+			<a class="ml-2" href="https://twitter.com/OnlySpaceIN" target="blank" rel="noopener"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+			<a class="ml-2" href="https://www.instagram.com/onlyspace.in" target="blank" rel="noopener"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>  
+		  </div>
+		</div>
+	  </header>
+	  <div class="nav-scroller bg-light" id="navbar">
+		<nav class="nav collapse show px-5" id="navbarToggleExternalContent">
+		  <a class="mx-auto mx-md-0 ml-md-2 ml-0" href="/">HOME</a>
+		  <a class="mx-auto mx-md-0 ml-md-2 ml-0" href="/about">ABOUT US</a>
+		  <!--Subscribe-->
+			<% if(!currentUser){ %>
+		  <a class="mx-auto mx-md-0 ml-md-auto" data-toggle="modal" data-target="#exampleModalCenter" id="subscribeClick">SUBSCRIBE</a>
+			<% } else{ %>				
+			<div class="btn-group dropleft ml-md-auto">
+			  <button class="btn btn-transparent mx-auto mx-md-0 dropdown-toggle text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= currentUser.username %></button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="/posts/new">Add Post</a>
+				<a class="dropdown-item" href="/subscribe">Email List</a>
+				<a class="dropdown-item" href="/logout">Logout</a>
+			  </div>
+			</div>
+			<% } %>
+
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+			  aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+				  <form action="/subscribe" method="POST">
+					<div class="modal-header">
+					  <h4>Subscribe to our newsletter</h4>  
+					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+					</div>
+					<div class="modal-body">          
+					  <p>Signup for our weekly newsletter to get the latest news and updates delivered directly to your inbox.</p>
+					  <div class="input-group">
+						<input type="email" class="form-control" name="sub[email]" placeholder="Enter your email" required>
+						<span class="input-group-btn">
+						  <input type="submit" class="btn btn-primary" value="Subscribe">
+						</span>
+					  </div>
+					</div>
+				  </form>   
+				</div>
+			  </div>
+			</div>
+		</nav>
+	  </div>
+		<div class="container my-3">
+			<% if(error && error.length > 0){ %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>
+				</div>
+			<% } %>
+		</div>
+		<!-- </div> -->
+	<div class="content">

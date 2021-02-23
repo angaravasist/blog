@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<div class="row container mx-auto d-flex justify-content-center text-center">
+	<div class="col-3 border rounded">
+		<h3 class="border-bottom">Date</h3>
+		<% returnData.forEach((element)=>{ %>
+			<p>Subscribed on: <%= element.date.toDateString() %></p>
+		<% }); %>
+	</div>
+	<div class="col-4 border rounded">
+		<h3 class="border-bottom">E-mail Address</h3>
+		<% returnData.forEach((element)=>{ %>
+			<p><%= element.email %></p>
+		<% }); %>
+	</div>
+</div>
+<%- include("partials/footer") %>
